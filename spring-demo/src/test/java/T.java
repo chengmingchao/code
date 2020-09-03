@@ -1,14 +1,20 @@
-import com.cmc.bean.Student;
-import com.cmc.bean.User;
+import com.cmc.bean.Dog;
+import com.cmc.service.UserServiceImpl;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class T {
+
+
+
     public static void main(String[] args) {
-        ApplicationContext context=new ClassPathXmlApplicationContext("beanDI.xml");
-        User user = (User) context.getBean("user2");
-        User user1 = (User) context.getBean("user2");
-        System.out.println(user==user1);
+        ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
+        Dog bean = context.getBean(Dog.class);
+        bean.test();
 
     }
+
+
 }

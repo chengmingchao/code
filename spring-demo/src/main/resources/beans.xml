@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
 
-   <bean id="user" class="com.cmc.bean.User">
-    <property name="name" value="user"/>
-       <property name="age" value="10"/>
-   </bean>
+    <context:annotation-config/>
 
-    <import resource="bean1.xml"/>
+    <bean id="service1" class="com.cmc.service.UserServiceImpl" />
+
+    <bean id="service2" class="com.cmc.service.UserServiceImpl"/>
+
+    <bean class="com.cmc.bean.Dog"/>
 </beans>
