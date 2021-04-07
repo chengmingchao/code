@@ -12,12 +12,16 @@ public class Arrays20210406 {
     }
 
     public static int removeDuplicates(int[] nums) {
+        // 数组的长度
         int n = nums.length;
+        // 如果数组长度<=1，直接返回
         if (n <= 1) {
             return n;
         }
+        // 两个指针，slow指向第一位，fast指向第二位
         int slow = 1, fast = 1;
         while (fast < n) {
+            //如果不相等，slow+1，相当于不相同的元素个数
             if (nums[slow - 1] != nums[fast]) {
                 nums[slow] = nums[fast];
                 ++slow;
